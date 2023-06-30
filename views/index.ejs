@@ -1,0 +1,191 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Đồ chơi</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            .toy {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .toy img {
+                width: 300px;
+                margin-right: 20px;
+            }
+            
+            .toy-info {
+                font-size: 18px;
+            }
+            
+            .header-wrap-icon > span {
+            display: inline-block;
+            margin: 8px 5px 0;
+            position: relative;
+            transition: opacity 150ms linear;
+            }
+
+            .icon-cart svg {
+            fill: #252a2b;
+            width: 24px;
+            height: 24px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+
+        <span id="site-cart-handle" class="icon-cart" aria-label="Open cart" title="Giỏ hàng">
+            <a href="/cart">
+                <span class="cart-menu" aria-hidden="true">
+                    <svg version="1.1" class="svg-cart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 27" style="enable-background:new 0 0 24 27;" xml:space="preserve">
+                        <g>
+                            <path d="M0,6v21h24V6H0z M22,25H2V8h20V25z"></path>
+                        </g>
+                        <g>
+                            <path d="M12,2c3,0,3,2.3,3,4h2c0-2.8-1-6-5-6S7,3.2,7,6h2C9,4.3,9,2,12,2z"></path>
+                        </g>
+                    </svg>
+                    <span class="count-holder"></span>
+                        <span class="count">0</span>
+                </span>
+            </a>
+        </span>
+        <!-- -->                               
+
+        <!-- (2) READ Task -->                        
+        <!-- <h2> READ: All Quotes in Database </h2>
+        <ul class="quotes">
+
+            <% for(var i = 0; i < quotes.length; i++) {%>
+                <li class="quote">
+
+                    <span><%= quotes[i].name %></span>:
+
+                    <span><%= quotes[i].quote %></span>
+                </li>
+            <% } %>
+        </ul>   -->
+        <h1>Danh sách đồ chơi bán chạy</h1>
+
+        <div class="toy">
+            <div class="img-toy">
+                <img src="toy1.jpg" alt="Toy 1"/>
+            </div> 
+            <div class="detail-box">
+                <p>
+                    Mô hình xe ô tô lắp ghép Porsche 911 Gt3 RS Orange 2758 pcs tỉ lệ 1:8 non lego LG024
+                </p>
+                <h3>
+                    <span>1,699,000</span>₫
+                </h3>
+                <a href="/cart">
+                    Thêm vào giỏ hàng 
+                </a>
+            </div> 
+        </div>
+        <div class="toy">
+            <div class="img-toy">
+                <img src="toy2.jpg" alt="Toy 2"/>
+            </div> 
+            <div class="detail-box">
+                <p>
+                    Mô hình xe ô tô lắp ghép Porsche 911 Gt3 RS Orange 2758 pcs tỉ lệ 1:8 non lego LG024
+                </p>
+                <h3>
+                    <span>1,699,000</span>₫
+                </h3>
+                <a href="/cart">
+                    Thêm vào giỏ hàng 
+                </a>
+            </div> 
+        </div>  
+
+        <div class="toy">
+            <div class="img-toy">
+                <img src="toy3.jpg" alt="Toy 3"/>
+            </div> 
+            <div class="detail-box">
+                <p>
+                    Mô hình xe ô tô lắp ghép Porsche 911 RWB JDM body kit 2435 pcs tỉ lệ 1:10 non lego LG023
+                </p>
+                <h3>
+                    <span>1,699,000</span>₫
+                </h3>
+                <a href="/cart">
+                    Thêm vào giỏ hàng 
+                </a>
+            </div> 
+        </div> 
+
+        <div class="toy">
+            <div class="img-toy">
+                <img src="toy4.jpg" alt="Toy 4"/>
+            </div> 
+            <div class="detail-box">
+                <p>
+                    Mô hình xe ô tô lắp ghép Ford Raptor 2022 Technic 1379 pcs có động cơ tỉ lệ 1:14 non lego LG019
+                </p>
+                <h3>
+                    <span class="pro-sale">-10%</span>
+                    <span>1,299,000</span>₫ 
+                </h3>
+                <a href="/cart">
+                    Thêm vào giỏ hàng 
+                </a>
+            </div> 
+        </div> 
+
+        <div class="toy">
+            <div class="img-toy">
+                <img src="toy5.jpg" alt="Toy 5"/>
+            </div> 
+            <div class="detail-box">
+                <p>
+                    Mô hình xe ô tô lắp ghép Bugatti Chiron 4031 pcs tỉ lệ 1:5 non lego LG015
+                </p>
+                <h3>
+                    <span>1,399,000</span>₫
+                </h3>
+                <a href="/cart">
+                    Thêm vào giỏ hàng 
+                </a>
+            </div> 
+        </div> 
+        <!-- (3) UPDATE Task -->
+        <!-- <div>
+            <h2>UPDATE: Darth Vadar invades!</h2>
+            <p>
+            Replace first Yoda's quote with a quote written by Darth Vadar
+            </p>
+            <button id="update-button">Replace Yoda's quote</button>
+        </div>
+
+        <div>
+            <h2>DELETE: Remove Darth Vadar!</h2>
+            <p>
+            Delete one Darth Vadar's quote. Does nothing if there are no more Darth Vadar's quote
+            </p>
+            <button id="delete-button">Delete Darth Vadar's quote</button>
+        </div> -->
+
+        <!-- ... -->
+        <script src="/main.js"></script>
+    
+    </body>
+
+</html>
